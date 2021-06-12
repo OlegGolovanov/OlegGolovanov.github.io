@@ -1,0 +1,33 @@
+.tabs
+    display: block
+    padding-bottom: 103px
+    &__wapper
+        display: flex
+        justify-content: space-between
+        max-width: 702px
+        margin: 0 auto
+        margin-top: 69px
+    &__box
+        width: 220px
+        height: 50px
+        border: 2px solid #d0d0d0
+        transform: skewX(-20deg)
+        text-align: center
+        list-style: none
+        padding: 0
+        &:hover
+            box-shadow: 3px 3px 20px
+            color: $collor-c70101
+            border: none
+            cursor: pointer
+        div
+            padding: 10px 0
+            transform: skewX(20deg)
+            font-size: 18px
+            font-weight: 500
+            text-transform: uppercase
+            color: #6b6b6b
+
+        &_active
+            color: $collor-ffffff
+            background-color: $collor-c70101
