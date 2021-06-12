@@ -572,6 +572,7 @@
   }
   .header__phone a {
     font-size: 34px;
+    transform: none;
   }
   .header__official {
     display: none;
