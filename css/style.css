@@ -223,7 +223,6 @@
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  margin-top: 36px;
 }
 
 .form-feed__input {
@@ -234,6 +233,14 @@
 
 .form-feed__input:first-child {
   margin-top: 0;
+}
+
+.form-feed_form-feed_1 {
+  margin-top: 36px;
+}
+
+.form-feed_form-feed_1 {
+  margin-top: 36px;
 }
 
 @-webkit-keyframes fade {
@@ -340,14 +347,6 @@
 
 .carousel #slick-slide-control00 {
   margin-left: 0;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
 }
 
 .tabs {
@@ -567,6 +566,52 @@
   border: 1px;
   border-color: white;
   border-radius: 100%;
+}
+
+.windows {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(102, 89, 89, 0.5);
+}
+
+.windows .windows-consultation {
+  position: absolute;
+  padding: 40px;
+  max-width: 384px;
+  max-height: 400px;
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.windows .windows-consultation__title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #0d0d0d;
+}
+
+.windows .windows-consultation__dcr {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0d0d0d;
+}
+
+.windows .windows-consultation__close {
+  position: absolute;
+  right: 0;
+  top: -37px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 @media (max-width: 1199px) {

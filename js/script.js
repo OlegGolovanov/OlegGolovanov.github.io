@@ -108,7 +108,7 @@ TabNext(productBack);
 
 function hideBlock(selektor) {
   tabsBox.forEach(item => {
-    item.classList.remove("tabs__box_active"); 
+    item.classList.remove("tabs__box_active");
   });
 
   document.querySelectorAll(selektor).forEach(item => {
@@ -152,10 +152,40 @@ function Tabfitness(fitness, idFitness, run, idRun, triathlon, idTriathlon) {
       }
     });
   });
-
-
-
-
 }
 
 Tabfitness(".product_fitness", "#fitness", '.product_run', '#run', '.product_triathlon', '#triathlon');
+
+//Modals
+
+const windows = document.querySelector(".windows"),
+  close = document.querySelector(".windows-consultation__close");
+
+function hideWindows() {
+  windows.classList.add("hide");
+  windows.classList.remove("show");
+}
+hideWindows();
+
+function showWindows() {
+  windows.classList.remove("hide");
+  windows.classList.add("show");
+}
+
+document.querySelector(".btn_main").addEventListener("click", () => {
+  showWindows();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === "Escape" && windows.classList.contains("show")) {
+    hideWindows();
+  }
+});
+
+close.addEventListener("click", hideWindows);
+
+document.querySelector(".windows").addEventListener("click", (e) => {
+  if (e.target == windows) {
+    hideWindows();
+  }
+});
