@@ -634,9 +634,9 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 475px) {
   .carousel__clock {
-    width: 228px;
+    width: 200px;
   }
   .carousel__box-img {
     max-width: 100%;
