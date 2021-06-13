@@ -166,7 +166,7 @@ const windows = document.querySelector(".windows"),
   btn_product = document.querySelectorAll(".btn_product"),
   product__title = document.querySelectorAll(".product__title");
 
-function hideWindows() {
+function hideModals() {
   windows.classList.add("hide");
   windows.classList.remove("show");
   windowsConsultation.classList.add("hide");
@@ -174,9 +174,9 @@ function hideWindows() {
   product_order.classList.add("hide");
   product_order.classList.remove("show");
 }
-hideWindows();
+hideModals();
 
-function showWindowsConsultation(wapperSelector, selector) {
+function showModals(wapperSelector, selector) {
   wapperSelector.classList.remove("hide");
   wapperSelector.classList.add("show");
   selector.classList.remove("hide");
@@ -184,31 +184,31 @@ function showWindowsConsultation(wapperSelector, selector) {
 }
 
 document.querySelector(".btn_main").addEventListener("click", () => {
-  showWindowsConsultation(windows, windowsConsultation);
+  showModals(windows, windowsConsultation);
 
 });
 
 document.addEventListener('keydown', (e) => {
   if (e.code === "Escape" && windows.classList.contains("show")) {
-    hideWindows();
+    hideModals();
   }
 });
 
 windows.addEventListener("click", (e) => {
   if (e.target && e.target.matches(".windows")) {
-    hideWindows();
+    hideModals();
 
   }
 });
 
 close.forEach(item => {
-  item.addEventListener("click", hideWindows);
+  item.addEventListener("click", hideModals);
 })
 
 btn_product.forEach((item, i) => {
   item.addEventListener("click", (e) => {
     if (e.target === item) {
-      showWindowsConsultation(windows, product_order);
+      showModals(windows, product_order);
       order.innerText = product__title[i].innerText /* клонирование текста селектора
       в другой селектор */
 
