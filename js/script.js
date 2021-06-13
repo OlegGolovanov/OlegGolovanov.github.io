@@ -159,21 +159,33 @@ Tabfitness(".product_fitness", "#fitness", '.product_run', '#run', '.product_tri
 //Modals
 
 const windows = document.querySelector(".windows"),
-  close = document.querySelector(".windows-consultation__close");
+  close = document.querySelectorAll(".window-close"),
+  windowsConsultation = document.querySelector(".windows-consultation"),
+  product_order = document.querySelector(".product_order"),
+  order = document.querySelector("#order"),
+  btn_product = document.querySelectorAll(".btn_product"),
+  product__title = document.querySelectorAll(".product__title");
 
 function hideWindows() {
   windows.classList.add("hide");
   windows.classList.remove("show");
+  windowsConsultation.classList.add("hide");
+  windowsConsultation.classList.remove("show");
+  product_order.classList.add("hide");
+  product_order.classList.remove("show");
 }
 hideWindows();
 
-function showWindows() {
-  windows.classList.remove("hide");
-  windows.classList.add("show");
+function showWindowsConsultation(wapperSelector, selector) {
+  wapperSelector.classList.remove("hide");
+  wapperSelector.classList.add("show");
+  selector.classList.remove("hide");
+  selector.classList.add("show");
 }
 
 document.querySelector(".btn_main").addEventListener("click", () => {
-  showWindows();
+  showWindowsConsultation(windows, windowsConsultation);
+
 });
 
 document.addEventListener('keydown', (e) => {
@@ -182,10 +194,24 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-close.addEventListener("click", hideWindows);
-
-document.querySelector(".windows").addEventListener("click", (e) => {
-  if (e.target == windows) {
+windows.addEventListener("click", (e) => {
+  if (e.target && e.target.matches(".windows")) {
     hideWindows();
+
   }
 });
+
+close.forEach(item => {
+  item.addEventListener("click", hideWindows);
+})
+
+btn_product.forEach((item, i) => {
+  item.addEventListener("click", (e) => {
+    if (e.target === item) {
+      showWindowsConsultation(windows, product_order);
+      order.innerText = product__title[i].innerText /* клонирование текста селектора
+      в другой селектор */
+
+    };
+  })
+})
