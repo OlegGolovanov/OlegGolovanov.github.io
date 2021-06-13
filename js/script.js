@@ -71,8 +71,6 @@ function slider2() {
 
 slider2();
 
-
-
 // Forms
 
 const productContent = document.querySelectorAll(".product__content"),
@@ -104,7 +102,6 @@ TabNext(productDetails);
 TabNext(productBack);
 
 // Tabs 
-
 
 function hideBlock(selektor) {
   tabsBox.forEach(item => {
@@ -174,7 +171,7 @@ function hideModals() {
   product_order.classList.add("hide");
   product_order.classList.remove("show");
 }
-hideModals();
+// hideModals();
 
 function showModals(wapperSelector, selector) {
   wapperSelector.classList.remove("hide");
@@ -185,8 +182,17 @@ function showModals(wapperSelector, selector) {
 
 document.querySelector(".btn_main").addEventListener("click", () => {
   showModals(windows, windowsConsultation);
-
 });
+
+btn_product.forEach((item, i) => {
+  item.addEventListener("click", (e) => {
+    if (e.target === item) {
+      showModals(windows, product_order);
+      order.innerText = product__title[i].innerText /* клонирование текста селектора product__title[i]
+      в селектор order */
+    };
+  })
+})
 
 document.addEventListener('keydown', (e) => {
   if (e.code === "Escape" && windows.classList.contains("show")) {
@@ -197,21 +203,9 @@ document.addEventListener('keydown', (e) => {
 windows.addEventListener("click", (e) => {
   if (e.target && e.target.matches(".windows")) {
     hideModals();
-
   }
 });
 
 close.forEach(item => {
   item.addEventListener("click", hideModals);
-})
-
-btn_product.forEach((item, i) => {
-  item.addEventListener("click", (e) => {
-    if (e.target === item) {
-      showModals(windows, product_order);
-      order.innerText = product__title[i].innerText /* клонирование текста селектора
-      в другой селектор */
-
-    };
-  })
 })
