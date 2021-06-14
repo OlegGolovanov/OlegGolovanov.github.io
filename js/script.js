@@ -71,8 +71,6 @@ function slider2() {
 
 slider2();
 
-
-
 // Forms
 
 const productContent = document.querySelectorAll(".product__content"),
@@ -104,7 +102,6 @@ TabNext(productDetails);
 TabNext(productBack);
 
 // Tabs 
-
 
 function hideBlock(selektor) {
   tabsBox.forEach(item => {
@@ -159,33 +156,52 @@ Tabfitness(".product_fitness", "#fitness", '.product_run', '#run', '.product_tri
 //Modals
 
 const windows = document.querySelector(".windows"),
-  close = document.querySelector(".windows-consultation__close");
+  close = document.querySelectorAll(".window-close"),
+  windowsConsultation = document.querySelector(".windows-consultation"),
+  product_order = document.querySelector(".product_order"),
+  order = document.querySelector("#order"),
+  btn_product = document.querySelectorAll(".btn_product"),
+  product__title = document.querySelectorAll(".product__title");
 
-function hideWindows() {
+function hideModals() {
   windows.classList.add("hide");
   windows.classList.remove("show");
+  windowsConsultation.classList.add("hide");
+  windowsConsultation.classList.remove("show");
+  product_order.classList.add("hide");
+  product_order.classList.remove("show");
 }
-hideWindows();
+// hideModals();
 
-function showWindows() {
-  windows.classList.remove("hide");
-  windows.classList.add("show");
+function showModals(wapperSelector, selector) {
+  wapperSelector.classList.remove("hide");
+  wapperSelector.classList.add("show");
+  selector.classList.remove("hide");
+  selector.classList.add("show");
 }
 
 document.querySelector(".btn_main").addEventListener("click", () => {
-  showWindows();
+  showModals(windows, windowsConsultation);
 });
+
+btn_product.forEach((item, i) => {
+  item.addEventListener("click", (e) => {
+    if (e.target === item) {
+      showModals(windows, product_order);
+      order.innerText = product__title[i].innerText /* клонирование текста селектора product__title[i]
+      в селектор order */ 
+    };
+  })
+})
 
 document.addEventListener('keydown', (e) => {
   if (e.code === "Escape" && windows.classList.contains("show")) {
-    hideWindows();
+    hideModals();
   }
 });
 
-close.addEventListener("click", hideWindows);
 
 document.querySelector(".windows").addEventListener("click", (e) => {
   if (e.target == windows) {
-    hideWindows();gi
+    hideWindows();
   }
-});
