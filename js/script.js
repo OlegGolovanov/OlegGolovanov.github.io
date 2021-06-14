@@ -189,7 +189,7 @@ btn_product.forEach((item, i) => {
     if (e.target === item) {
       showModals(windows, product_order);
       order.innerText = product__title[i].innerText /* клонирование текста селектора product__title[i]
-      в селектор order */
+      в селектор order */ 
     };
   })
 })
