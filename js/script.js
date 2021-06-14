@@ -186,6 +186,6 @@ close.addEventListener("click", hideWindows);
 
 document.querySelector(".windows").addEventListener("click", (e) => {
   if (e.target == windows) {
-    hideWindows();
+    hideWindows();gi
   }
 });
