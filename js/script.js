@@ -171,7 +171,7 @@ function hideModals() {
   product_order.classList.add("hide");
   product_order.classList.remove("show");
 }
-// hideModals();
+hideModals();
 
 function showModals(wapperSelector, selector) {
   wapperSelector.classList.remove("hide");
@@ -188,11 +188,12 @@ btn_product.forEach((item, i) => {
   item.addEventListener("click", (e) => {
     if (e.target === item) {
       showModals(windows, product_order);
-      order.innerText = product__title[i].innerText /* клонирование текста селектора product__title[i]
-      в селектор order */ 
-    };
-  })
-})
+      order.innerText = product__title[i].innerText
+      /* клонирование текста селектора product__title[i]
+           в селектор order */
+    }
+  });
+});
 
 document.addEventListener('keydown', (e) => {
   if (e.code === "Escape" && windows.classList.contains("show")) {
@@ -203,5 +204,9 @@ document.addEventListener('keydown', (e) => {
 
 document.querySelector(".windows").addEventListener("click", (e) => {
   if (e.target == windows) {
-    hideWindows();
+    hideModals();
   }
+  if (e.target && e.target.matches(".window-close")) {
+    hideModals();
+  }
+});
