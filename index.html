@@ -114,9 +114,12 @@
                     <div class="consultation__sub-title">Просто заполните форму заявки <br>
                         и мы перезвоним вам в течении 10 минут</div>
                     <form class="form-feed form-feed_form-feed_1" action="#">
-                        <input class="form-feed__input" name="name" required placeholder="Ваше имя" type="Text">
-                        <input class="form-feed__input" name="phone" required placeholder="Ваш телефон" type="nuber">
-                        <input class="form-feed__input" name="email" required placeholder="Ваше E-mail" type="email">
+                        <input class="form-feed__input" name="name" placeholder="Ваше имя">
+                        <div class="error error_red"></div>
+                        <input class="form-feed__input" data-tel name="phone" placeholder="Ваш телефон" type="tel">
+                        <div class="error error_red"></div>
+                        <input class="form-feed__input" name="email" placeholder="Ваше E-mail">
+                        <div class="error error_red"></div>
                         <button class="btn btn_input">заказать кОНСУЛЬТАЦИЮ</button>
                     </form>
                 </div>
@@ -444,10 +447,13 @@
             <div class="windows-consultation__dcr">
                 и мы перезвоним вам в течении 10 минут
             </div>
-            <form class="form-feed form-feed_windows" action="#">
-                <input class="form-feed__input" name="name" required placeholder="Ваше имя" type="Text">
-                <input class="form-feed__input" name="phone" required placeholder="Ваш телефон" type="nuber">
-                <input class="form-feed__input" name="email" required placeholder="Ваше E-mail" type="email">
+            <form class="form-feed form-feed_windows" data-form-feed_windows="0" action="#">
+                <input class="form-feed__input" name="name" placeholder="Ваше имя">
+                <div class="error"></div>
+                <input class="form-feed__input" data-tel name="phone" placeholder="Ваш телефон" type="tel">
+                <div class="error"></div>
+                <input class="form-feed__input" name="email" placeholder="Ваше E-mail">
+                <div class="error"></div>
                 <button class="btn btn_input">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
         </div>
@@ -460,10 +466,13 @@
             <div class="windows-consultation__dcr" id="order">
                 и мы перезвоним вам в течении 10 минут
             </div>
-            <form class="form-feed form-feed_windows" action="#">
-                <input class="form-feed__input" name="name" required placeholder="Ваше имя" type="Text">
-                <input class="form-feed__input" name="phone" required placeholder="Ваш телефон" type="nuber">
-                <input class="form-feed__input" name="email" required placeholder="Ваше E-mail" type="email">
+            <form class="form-feed form-feed_windows" data-form-feed_windows="1" action="#">
+                <input class="form-feed__input" name="name" placeholder="Ваше имя">
+                <div class="error"></div>
+                <input class="form-feed__input" data-tel name="phone" placeholder="Ваш телефон" type="tel">
+                <div class="error"></div>
+                <input class="form-feed__input" name="email" placeholder="Ваше E-mail">
+                <div class="error"></div>
                 <button class="btn btn_input">купить</button>
             </form>
         </div>
