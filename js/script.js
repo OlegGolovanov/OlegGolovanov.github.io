@@ -399,28 +399,56 @@ document.addEventListener("DOMContentLoaded", () => {
   const sroll = document.querySelector(".scroll");
 
   window.addEventListener('scroll', () => {
-    console.log(document.documentElement.scrollTop);
-      if (document.documentElement.scrollTop < 1300) {
-        sroll.classList.add("hide");
-        sroll.classList.remove("show");
-      } else {
-        sroll.classList.add("show");
-        sroll.classList.remove("hide");
-      }
+    if (document.documentElement.scrollTop < 1300) {
+      sroll.classList.add("hide");
+      sroll.classList.remove("show");
+    } else {
+      sroll.classList.add("show");
+      sroll.classList.remove("hide");
+    }
   });
 
-// разобрать
-  const smoothLinks = document.querySelectorAll('a[href^="#"]');
-  for (let smoothLink of smoothLinks) {
-    smoothLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      const id = smoothLink.getAttribute('href');
+  // разобрать
+  // const smoothLinks = document.querySelectorAll('a[href^="#"]');
+  // for (let smoothLink of smoothLinks) {
+  //   smoothLink.addEventListener('click', function (e) {
+  //     e.preventDefault();
+  //     const id = smoothLink.getAttribute('href');
 
-      document.querySelector(id).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+  //     document.querySelector(id).scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'start'
+  //     });
+  //   });
+  // };
+
+  const up = document.querySelector('.scroll__img');
+  // 1.	Получаем переменную с ссылкой с атрибутом href #слово
+
+  up.addEventListener('click', (e) => {
+//     2.	Вешаем обработчик события на эту переменную (также можно перебрать все ссылки)
+
+// Получаем атрибут href нажимаемой ссылки 
+// - В обработчике событий получаем атрибут нажимаемой ссылки без значка #, чтобы можно было получить только слово, которое присвоено к id, куда нужно переместиться.  Для этого получаем атрибут (метод .getAttribute(“слово”)) слово нажимаемой ссылки с обрезанным substr(1) первым символом.
+// Этот атрибут присваиваем к переменной.
+
+// Создаем перемещение к этому атрибуту (месту в док. с этим же атрибутом слово)
+// Получаем элемент, к которому мы ранее присвоили только атрибут слово без значка #, и присваиваем к нему метод скролла c двумя параметрами .scrollIntoView({
+// })
+
+    e.preventDefault();
+    const upAttribut = e.target.parentNode.getAttribute("href").substr(1);
+    document.getElementById(upAttribut).scrollIntoView({
+      behavior: "smooth",
+      block: 'start'
     });
-  };
+//     3.	Метод .scrollIntoView работает не во всех браузерах. Чтобы работал во всех на сайте npm скачиваем smoothscroll-polyfill.
+// npm I smoothscroll-polyfill –save
+// Можно этот файл (обычный файл js) напрямую скачать из репозитория и подключить его как обычный js перед основным js
+
+
+  });
+
+
 
 });
