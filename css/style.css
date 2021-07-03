@@ -186,6 +186,8 @@
 
 .advantages__icon a img {
   width: 100%;
+  border-style: none;
+  background-color: rgba(255, 0, 0, 0.1);
 }
 
 .advantages__img-heart {
