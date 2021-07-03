@@ -2,6 +2,30 @@
   font-family: 'MuseoSansCyrl', sans-serif;
 }
 
+@-webkit-keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .promo {
   min-height: 650px;
   background: url("../img/bg/background_girl.png") center center/cover no-repeat;
@@ -162,6 +186,22 @@
 
 .advantages__icon a img {
   width: 100%;
+}
+
+.advantages__img-heart {
+  -webkit-animation-name: heartbeat;
+  animation-name: heartbeat;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.advantages__img-heart:hover {
+  -webkit-animation: none;
+  animation: none;
 }
 
 .advantages__icon-width-228 {

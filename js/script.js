@@ -408,19 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // разобрать
-  // const smoothLinks = document.querySelectorAll('a[href^="#"]');
-  // for (let smoothLink of smoothLinks) {
-  //   smoothLink.addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const id = smoothLink.getAttribute('href');
-
-  //     document.querySelector(id).scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: 'start'
-  //     });
-  //   });
-  // };
+// Плавная прокрутка
 
   const up = document.querySelector('.scroll__img');
   // 1.	Получаем переменную с ссылкой м заданный атрибутом с заглушкой #
