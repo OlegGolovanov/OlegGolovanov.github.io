@@ -535,6 +535,47 @@
   color: #c70101;
 }
 
+.margin-top {
+  margin-top: 103px;
+}
+
+.reviews {
+  min-height: 876px;
+  display: block;
+  padding-bottom: 71px;
+}
+
+.reviews__circle {
+  margin-top: 28px;
+  width: 169px;
+  height: 169px;
+  border-radius: 84.5px;
+}
+
+.reviews__circle img {
+  width: 100%;
+}
+
+.reviews__dsc {
+  max-width: 652px;
+  max-height: 236px;
+}
+
+.reviews__text {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #0d0d0d;
+}
+
+.reviews__text1 {
+  margin-top: 25px;
+}
+
+.reviews__text2 {
+  margin-top: 30px;
+}
+
 .map {
   display: block;
 }

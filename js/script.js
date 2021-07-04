@@ -408,19 +408,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // разобрать
-  // const smoothLinks = document.querySelectorAll('a[href^="#"]');
-  // for (let smoothLink of smoothLinks) {
-  //   smoothLink.addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const id = smoothLink.getAttribute('href');
-
-  //     document.querySelector(id).scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: 'start'
-  //     });
-  //   });
-  // };
 
   const up = document.querySelector('.scroll__img');
   // 1.	Получаем переменную с ссылкой с атрибутом href #слово
