@@ -408,10 +408,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-<<<<<<< HEAD
-=======
-// Плавная прокрутка
->>>>>>> 3f51dbcc942a48fd618e612a2a7f4f40818b31e2
 
   const up = document.querySelector('.scroll__img');
   // 1.	Получаем переменную с ссылкой м заданный атрибутом с заглушкой #
