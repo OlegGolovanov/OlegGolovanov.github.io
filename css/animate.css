@@ -109,31 +109,34 @@
   }
 }
 
-@-webkit-keyframes   {
+
+@-webkit-keyframes fadeInUp {
   from {
+    opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
-    visibility: visible;
   }
 
   to {
+    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes slideInUp {
+@keyframes fadeInUp {
   from {
+    opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
-    visibility: visible;
   }
 
   to {
+    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
-.animate__slideInUp {
-  -webkit-animation-name: slideInUp;
-  animation-name: slideInUp;
+.animate__fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }
